@@ -111,25 +111,25 @@ def sanityCheck(sift):
 def comare_many(imgsrc,sift):
     all_images_to_compare= []
     titels = []
-    for file in glob.iglob(r"C:/Users/user/PycharmProjects/imgCompare/pistol/*"):
+    for file in glob.iglob(r"C:/Users/user/PycharmProjects/imgCompare/Cookie/*"):
         titels.append(file)
         all_images_to_compare.append(file)
         # print(file)
 
     for imageToComp, title in zip(all_images_to_compare, titels):
-        matchPercent= comare_2img(imgsrc, imageToComp, 4000, 4000,sift)
+        matchPercent= comare_2img(imgsrc, imageToComp, 8000, 8000,sift)
 
 if __name__ == '__main__':
     # sanityCheck(sift)
     #
-    imgsrc = r'C:\Users\user\PycharmProjects\imgCompare\pistol0.png'
+    imgsrc = r'C:\Users\user\PycharmProjects\imgCompare\Cookie\cookie0.png'
     sift = cv2.xfeatures2d.SIFT_create()
 
     # imgsrc2 = r'C:\Users\user\PycharmProjects\imgCompare\filter.jpg'
-    # comare_2img(imgsrc, imgsrc2, 8000,8000)
-    #
+    # comare_2img(imgsrc, imgsrc2, 8000,8000,sift)
+
     # imgsrc = r'C:\Users\user\PycharmProjects\imgCompare\img_2.jpg'
     # imgsrc2 = r'C:\Users\user\PycharmProjects\imgCompare\filter_2.jpg'
-    # comare_2img(imgsrc, imgsrc2, 8000,8000)
+    # comare_2img(imgsrc, imgsrc2, 8000,8000,sift)
 
     comare_many(imgsrc,sift)
